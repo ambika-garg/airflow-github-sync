@@ -5,7 +5,7 @@ from airflow.decorators import task
 from airflow.operators.bash import BashOperator
 
 # A DAG represents a workflow, a collection of tasks
-with DAG(dag_id="demo", start_date=datetime(2023, 8, 15), schedule="0 0 * * *") as dag:
+with DAG(dag_id="demo_one", start_date=datetime(2023, 8, 15), schedule="0 0 * * *") as dag:
 
     # Tasks are represented as operators
     hello = BashOperator(task_id="hello", bash_command="echo hello")
@@ -14,5 +14,9 @@ with DAG(dag_id="demo", start_date=datetime(2023, 8, 15), schedule="0 0 * * *") 
     def airflow():
         print("airflow")
 
+    @task()
+    def gitsync():
+        print("gitsync")
+
     # Set dependencies between tasks
-    hello >> airflow()
+    hello >> airflow() >> gitsync()
