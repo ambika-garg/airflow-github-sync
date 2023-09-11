@@ -13,4 +13,5 @@ steps:
 - script: |
     git config --global user.email "ambikagarg1101@gmail.com"
     git config --global user.name "ambika-garg"
+    git checkout -b prod
   displayName: 'Run a multi-line script'
