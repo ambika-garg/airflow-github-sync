@@ -15,4 +15,6 @@ steps:
     git config --global user.name "ambika-garg"
     git checkout -b prod
     git add .
+    git commit -m "push into prod branch"
+    git push
   displayName: 'Run a multi-line script'
