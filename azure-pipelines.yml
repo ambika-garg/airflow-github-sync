@@ -13,8 +13,4 @@ steps:
 - script: |
     git config --global user.email "ambikagarg1101@gmail.com"
     git config --global user.name "ambika-garg"
-    git checkout -b prod
-    git add .
-    git commit -m "push into prod branch"
-    git push --set-upstream origin prod
   displayName: 'Run a multi-line script'
