@@ -16,5 +16,5 @@ steps:
     git checkout -b prod
     git add .
     git commit -m "push into prod branch"
-     git push --set-upstream origin prod
+    git push --set-upstream origin prod
   displayName: 'Run a multi-line script'
