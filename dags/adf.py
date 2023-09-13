@@ -9,20 +9,8 @@ with DAG(dag_id="demo_one", start_date=datetime(2023, 8, 15), schedule="0 0 * * 
 
     # Tasks are represented as operators
     hello = BashOperator(task_id="hello", bash_command="echo hello")
-    hello2 = BashOperator(task_id="hello2", bash_command="echo hello2")
 
-    @task()
-    def airflow():
-        print("airflow")
-
-    @task()
-    def gitsync():
-        print("gitsync")
-
-    # @task()
-    # def printVar():
-    #     foo = Variable.get("foo")
-    #     print(foo)
-
+    version = BashOperator(task_id="Check python version", bash_command="echo python --version")
+    
     # Set dependencies between tasks
-    hello >> hello2 >> airflow() >> gitsync()
+    hello >> version

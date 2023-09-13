@@ -1,0 +1,26 @@
+name: Test DAGs
+
+on:
+  pull-request:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  # Runs the code validation tests
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+        
+  # goodbye:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: goodbye world
+  #       run: echo "Good Bye!"
+  #       shell: bash
+
