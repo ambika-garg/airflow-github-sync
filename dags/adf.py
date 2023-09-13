@@ -9,6 +9,7 @@ with DAG(dag_id="demo_one", start_date=datetime(2023, 8, 15), schedule="0 0 * * 
 
     # Tasks are represented as operators
     hello = BashOperator(task_id="hello", bash_command="echo hello")
+    hello2 = BashOperator(task_id="hello2", bash_command="echo hello2")
 
     @task()
     def airflow():
@@ -24,4 +25,4 @@ with DAG(dag_id="demo_one", start_date=datetime(2023, 8, 15), schedule="0 0 * * 
     #     print(foo)
 
     # Set dependencies between tasks
-    hello >> airflow() >> gitsync()
+    hello >> hello2 >> airflow() >> gitsync()
