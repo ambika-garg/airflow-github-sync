@@ -25,8 +25,3 @@ with DAG(dag_id="demo_one", start_date=datetime(2023, 8, 15), schedule="0 0 * * 
 
     # Set dependencies between tasks
     hello >> airflow() >> gitsync()
-
-    # git checkout -b prod
-    # git add .
-    # git commit -m "push into prod branch"
-    # git push prod
