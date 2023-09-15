@@ -4,7 +4,7 @@
 # from airflow.models import DagBag
 
 # @pytest.fixture(scope='module')#scope increased so that dag loading happens once
-# @mock.patch.dict(os.environ, {"key":"value"})#mocking os vars 
+# @mock.patch.dict(os.environ, {"key":"value"})#mocking os vars
 # def dag_bag():
 #   # Create an instance of the `DagBag` class
 #   dagbag = DagBag(dag_folder='dags', include_examples=False)
