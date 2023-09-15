@@ -1,6 +1,4 @@
 import os
-import shutil
-
 import pytest
 
 os.environ["AIRFLOW__CORE__LOAD_DEFAULT_CONNECTIONS"] = "False"  # Don't want anything to "magically" work
