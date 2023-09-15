@@ -5,6 +5,7 @@ from airflow.executors.debug_executor import DebugExecutor
 from airflow.utils.state import State
 from airflow.models import DagRun, TaskInstance
 
+
 def test_dag():
     """Validate a complete DAG"""
     with DAG(dag_id="demo_one", start_date=datetime(2023, 8, 15), schedule="0 0 * * *") as dag:
