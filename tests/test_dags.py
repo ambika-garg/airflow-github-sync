@@ -3,7 +3,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.executors.debug_executor import DebugExecutor
 from airflow.utils.state import State
-from airflow.models import DAG, DagRun, TaskInstance
+from airflow.models import DagRun, TaskInstance
 
 def test_dag():
     """Validate a complete DAG"""
@@ -12,13 +12,15 @@ def test_dag():
         # Tasks are represented as operators
         hello = BashOperator(task_id="hello", bash_command="echo hello")
 
-        version = BashOperator(task_id="Check_python_version", bash_command="python --version")
+        version = BashOperator(
+            task_id="Check_python_version", bash_command="python --version")
 
         # Set dependencies between tasks
         hello >> version
 
         dag.clear()
-        dag.run(executor=DebugExecutor(), start_date=dag.start_date, end_date=dag.start_date)
+        dag.run(executor=DebugExecutor(),
+                start_date=dag.start_date, end_date=dag.start_date)
 
         # Validate DAG run was successful
         dagruns = DagRun.find(dag_id=dag.dag_id, execution_date=dag.start_date)
