@@ -1,4 +1,3 @@
-import airflow
 import os
 import mock
 import pytest
