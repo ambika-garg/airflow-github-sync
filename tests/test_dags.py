@@ -18,7 +18,6 @@ def test_dag():
         # Set dependencies between tasks
         hello >> version
 
-        dag.clear()
         dag.run(executor=DebugExecutor(),
                 start_date=dag.start_date, end_date=dag.start_date)
 
