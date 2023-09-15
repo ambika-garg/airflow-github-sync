@@ -21,4 +21,4 @@ def test_python_operator():
 
     test = PythonOperator(task_id="test", python_callable=return_today)
     result = test.execute(context={"execution_date": datetime.datetime(2021, 1, 1)})
-    assert result == "Today is 01-02-2021"
+    assert result == "Today is 01-01-2021"
