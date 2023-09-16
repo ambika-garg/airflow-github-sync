@@ -9,6 +9,7 @@ from airflow.models import DagBag
 def dagbag():
     return DagBag(dag_folder="dags")
 
+
 def test_dag(dagbag):
     """Validate a complete DAG"""
     # with DAG(dag_id="demo_one", start_date=datetime(2023, 8, 15), schedule="0 0 * * *") as dag:
