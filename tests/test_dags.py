@@ -13,17 +13,6 @@ def dagbag():
 
 def test_dag(dagbag):
     """Validate a complete DAG"""
-    # with DAG(dag_id="demo_one", start_date=datetime(2023, 8, 15), schedule="0 0 * * *") as dag:
-
-    #     # Tasks are represented as operators
-    #     hello = BashOperator(task_id="hello", bash_command="echo hello")
-
-    #     version = BashOperator(
-    #         task_id="Check_python_version", bash_command="python --version")
-
-    #     # Set dependencies between tasks
-    #     hello >> version
-    #     dag.test()
     dagIds = dagbag.dag_ids
     logging.info("dagIds", dagIds)
     print(dagIds)
@@ -31,3 +20,7 @@ def test_dag(dagbag):
     for id in dagIds:
         dag = dagbag.get_dag(id)
         dag.test()
+
+
+def test_import_dags(dagbag):
+    assert not dagbag.import_errors
