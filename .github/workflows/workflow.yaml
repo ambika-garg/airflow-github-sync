@@ -47,7 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Deploy to Prod IR
-      - run: |
+        run: |
           git checkout -b prod
           git add .
           git commit -m "Updated"
