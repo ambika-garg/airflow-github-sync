@@ -3,6 +3,7 @@
 # from airflow.models import DAG
 import pytest
 from airflow.models import DagBag
+import logging
 
 
 @pytest.fixture()
@@ -24,4 +25,4 @@ def test_dag(dagbag):
     #     hello >> version
     #     dag.test()
     dagIds = dagbag.dag_ids
-    print(dagIds)
+    logging.info("dagIds", dagIds)
