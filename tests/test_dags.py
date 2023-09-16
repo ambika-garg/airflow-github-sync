@@ -1,8 +1,9 @@
 from datetime import datetime
 from airflow.operators.bash import BashOperator
-from airflow.executors.debug_executor import DebugExecutor
-from airflow.utils.state import State
-from airflow.models import DAG, DagRun, TaskInstance
+# from airflow.executors.debug_executor import DebugExecutor
+# from airflow.utils.state import State
+from airflow.models import DAG
+# , DagRun, TaskInstance
 
 
 def test_dag():
