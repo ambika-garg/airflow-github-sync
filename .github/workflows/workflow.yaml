@@ -40,3 +40,6 @@ jobs:
       - name: Pytest
         run: pytest tests/
         # After the PR is raised, post notification to review to go ahead and review
+
+env:
+  PYTHONUNBUFFERED: "1"
