@@ -23,5 +23,5 @@ def test_dag(dagbag):
     #     # Set dependencies between tasks
     #     hello >> version
     #     dag.test()
-    dagIds = dagbag.dag_ids()
+    dagIds = dagbag.dag_ids
     print(dagIds)
