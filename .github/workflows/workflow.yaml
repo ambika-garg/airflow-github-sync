@@ -1,6 +1,9 @@
 name: Test DAGs
 
 on:
+  pull_request: 
+    branches:
+      - 'main'
   push: 
     branches:
       - 'main'
@@ -36,3 +39,4 @@ jobs:
           pip install -r requirements.txt
       - name: Pytest
         run: pytest tests/
+        # After the PR is raised, post notification to review to go ahead and review
