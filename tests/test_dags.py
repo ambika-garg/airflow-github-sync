@@ -26,3 +26,4 @@ def test_dag(dagbag):
     #     dag.test()
     dagIds = dagbag.dag_ids
     logging.info("dagIds", dagIds)
+    print(dagIds)
