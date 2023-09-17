@@ -1,5 +1,5 @@
 name: Deploy
-
+# This is seperate, because I don't want every push to dev branch, should be deployed to prod.
 on:
   pull_request: 
     branches:
