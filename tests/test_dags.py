@@ -31,6 +31,7 @@ def test_expected_dags(dagbag):
 
 def test_requires_specific_tag(dag_bag):
     for dag in dag_bag.dags.items():
+        print(dag.tags)
         try:
             assert dag.tags.index("tutorial") >= 0
         except ValueError:
