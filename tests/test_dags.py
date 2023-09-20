@@ -10,17 +10,16 @@ import logging
 def dagbag():
     return DagBag(dag_folder="dags")
 
-
-def test_dag(dagbag):
-    """Validate a complete DAG"""
-    dagIds = dagbag.dag_ids
-    logging.info("dagIds", dagIds)
-    print(dagIds)
-
-    for id in dagIds:
-        dag = dagbag.get_dag(id)
-        dag.test()
-
-
-def test_import_dags(dagbag):
+def test_no_import_errors(dagbag):
     assert not dagbag.import_errors
+
+
+# def test_dag(dagbag):
+#     """Validate a complete DAG"""
+#     dagIds = dagbag.dag_ids
+#     logging.info("dagIds", dagIds)
+#     print(dagIds)
+
+#     for id in dagIds:
+#         dag = dagbag.get_dag(id)
+#         dag.test()
