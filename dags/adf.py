@@ -2,8 +2,12 @@ from datetime import datetime
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 
-with DAG(dag_id="airflow-ci-cd-tutorial", start_date=datetime(2023, 8, 15), schedule="0 0 * * *", tags=["tutorial", "CI/CD"]) as dag:
-
+with DAG(
+    dag_id="airflow-ci-cd-tutorial",
+    start_date=datetime(2023, 8, 15),
+    schedule="0 0 * * *",
+    tags=["tutorial", "CI/CD"]
+) as dag:
     # Tasks are represented as operators
     task1 = BashOperator(task_id="hello", bash_command="echo task1")
 
