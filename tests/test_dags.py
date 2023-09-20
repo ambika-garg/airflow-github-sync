@@ -28,8 +28,9 @@ def test_expected_dags(dagbag):
         assert dag is not None
         assert dag_id == dag.dag_id
 
+
 def test_requires_specific_tag(dag_bag):
-    for dag_id, dag in dag_bag.dags.items():
+    for dag in dag_bag.dags.items():
         try:
             assert dag.tags.index("tutorial") >= 0
         except ValueError:
@@ -44,5 +45,3 @@ def test_requires_specific_tag(dag_bag):
 #     for id in dagIds:
 #         dag = dagbag.get_dag(id)
 #         dag.test()
-
-
