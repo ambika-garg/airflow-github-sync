@@ -1,6 +1,6 @@
 from datetime import datetime
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+# from airflow.operators.bash import BashOperator
 
 with DAG(
     dag_id="airflow-ci-cd-tutorial",

@@ -33,7 +33,7 @@ def test_requires_specific_tag(dagbag):
     """
         Test if DAGS contain one or more tags from list of approved tags only.
     """
-    Expected_tags = {"ABC"}
+    Expected_tags = {"tutorial", "CI/CD"}
     dagIds = dagbag.dag_ids
 
     for id in dagIds:
