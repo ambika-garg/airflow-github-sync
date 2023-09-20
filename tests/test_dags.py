@@ -29,13 +29,19 @@ def test_expected_dags(dagbag):
         assert dag_id == dag.dag_id
 
 
-def test_requires_specific_tag(dag_bag):
-    for dag in dag_bag.dags.items():
-        print(dag.tags)
-        try:
-            assert dag.tags.index("tutorial") >= 0
-        except ValueError:
-            assert dag.tags.index("CI/CD") >= 0
+def test_requires_specific_tag(dagbag):
+    """
+        Test if DAGS contain one or more tags from list of approved tags only.
+    """
+    Expected_tags = {"tutorial", "CI/CD"}
+    dagIds = dagbag.dag_ids
+
+    for id in dagIds:
+        dag = dagbag.get_dag(id)
+        assert dag.tags
+        if Expected_tags:
+            assert not set(dag.tags) - Expected_tags
+
 
 # def test_dag(dagbag):
 #     """Validate a complete DAG"""
