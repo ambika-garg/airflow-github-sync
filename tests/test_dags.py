@@ -3,12 +3,12 @@
 # from airflow.models import DAG
 import pytest
 from airflow.models import DagBag
-import logging
 
 
 @pytest.fixture()
 def dagbag():
     return DagBag(dag_folder="dags")
+
 
 def test_no_import_errors(dagbag):
     assert not dagbag.import_errors
