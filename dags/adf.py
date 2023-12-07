@@ -17,7 +17,5 @@ with DAG(
 
     task4 = BashOperator(task_id="task4", bash_command="echo task4")
 
-    task5 = BashOperator(task_id="task5", bash_command="echo task5")
-
     # Set dependencies between tasks
     task1 >> task2 >> task3 >> task4
