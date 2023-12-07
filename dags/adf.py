@@ -3,13 +3,13 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 
 with DAG(
-    dag_id="airflow-ci-cd-tutorial",
+    dag_id="Fabric-airflow-testing",
     start_date=datetime(2023, 8, 15),
-    schedule="0 0 * * *",
-    tags=["tutorial", "CI/CD"]
+    schedule="0 15 * * *",
+    tags=["Fabric", "Testing"]
 ) as dag:
     # Tasks are represented as operators
-    task1 = BashOperator(task_id="hello", bash_command="echo task1")
+    task1 = BashOperator(task_id="task1", bash_command="echo task1")
 
     task2 = BashOperator(task_id="task2", bash_command="echo task2")
 
